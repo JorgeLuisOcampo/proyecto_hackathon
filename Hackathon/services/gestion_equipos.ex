@@ -37,6 +37,22 @@ defmodule Services.GestionEquipos do
     end
   end
 
+    def eliminar_participante(nombre_equipo, participante, lista_equipos) do
+    case Enum.find(lista_equipos, fn e -> e.nombre == nombre_equipo end) do
+      nil ->
+        {:error, "No se encontró el equipo #{nombre_equipo}"}
+
+      equipo ->
+        actualizado = Equipo.eliminar_participante(equipo, participante)
+        nueva_lista =
+          Enum.map(lista_equipos, fn e ->
+            if e.nombre == nombre_equipo, do: actualizado, else: e
+          end)
+
+        nueva_lista
+    end
+  end
+
   # Lista todos los equipos registrados
   def listar_equipos(lista_equipos) do
     if lista_equipos == [] do

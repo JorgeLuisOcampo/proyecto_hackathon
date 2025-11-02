@@ -41,6 +41,23 @@ defmodule Domain.Equipo do
     end
   end
 
+  def eliminar_participante(equipo, participante) do
+    if participante not in equipo.participantes do
+      {:error, :participante_no_existe}
+    else
+      %{equipo | participantes: equipo.participantes -- [participante]}
+    end
+  end
+
+  def transferir_participante(eq_viejo, eq_nuevo, participante) do
+    if participante not in eq_viejo.participantes do
+      {:error, :participante_no_existe}
+    else
+      eliminar_participante(eq_viejo, participante)
+      agregar_participante(eq_nuevo, participante)
+    end
+  end
+
   @doc """
   Asocia un proyecto al equipo.
   """

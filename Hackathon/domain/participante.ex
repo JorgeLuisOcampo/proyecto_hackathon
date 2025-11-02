@@ -23,7 +23,7 @@ defmodule Domain.Participante do
         }
 
   @doc """
-  Crea un nuevo participante con un identificador único (UUID generado automáticamente).
+  Crea un nuevo participante con un id único.
   """
   def crear(nombre, rol, email) when rol in [:estudiante, :mentor, :organizador] do
     %__MODULE__{
@@ -41,7 +41,7 @@ defmodule Domain.Participante do
     %{participante | equipo: nombre_equipo}
   end
 
-  # 🔒 Genera un identificador único (UUID simple).
+  # Genera un id único.
   defp generar_id do
     :crypto.strong_rand_bytes(6)
     |> Base.encode16(case: :lower)
