@@ -13,6 +13,19 @@ defmodule Domain.Hackathon do
     proyectos: []
   ]
 
+  def buscar_por_id(lista, id_buscada) do
+    case Enum.find(lista, fn %Participante{id: i} -> i == id_buscada end) do
+      nil -> false
+      participante -> true
+    end
+  end
+
+
+  def existe_id(id, nombre_csv) do
+
+
+  end
+
   # Crear una hackathon vacía
   def nueva(nombre) do
     %__MODULE__{nombre: nombre}

@@ -1,0 +1,11 @@
+id,nombre,rol,email,equipo
+"p001","Ana Torres",estudiante,"ana.torres@example.com","Equipo Alpha"
+"p002","Luis Rivas",estudiante,"luis.rivas@example.com","Equipo Alpha"
+"p003","María Gómez",mentor,"maria.gomez@example.com","Equipo Mentoría"
+"p004","Carlos Díaz",estudiante,"carlos.diaz@example.com","Equipo Phoenix"
+"p005","Laura Benítez",organizador,"lbenitez@hackathon.org",nil
+"p006","Sofía Hernández",estudiante,"sofia.hdz@example.com","Equipo Innovar"
+"p007","Diego López",mentor,"dlopez@example.com","Equipo Phoenix"
+"p008","Valentina Suárez",estudiante,"valesuarez@example.com","Equipo Innovar"
+"p009","Pedro Caballero",estudiante,"pedro.caballero@example.com",nil
+"p010","Elena Castillo",organizador,"elena.castillo@hackathon.org",nil

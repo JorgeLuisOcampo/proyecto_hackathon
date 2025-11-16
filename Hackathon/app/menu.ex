@@ -6,6 +6,8 @@ defmodule App.Menu do
 
   alias Domain.{Hackathon, Equipo, Participante, Proyecto}
   alias Services.GestionEquipos
+  alias Services.GestionParticipantes
+
 
   # ==============================
   # PUNTO DE ENTRADA
@@ -69,10 +71,11 @@ defmodule App.Menu do
         nombre = IO.gets("Nombre: ") |> String.trim()
         rol = IO.gets("Rol (estudiante/mentor/organizador): ") |> String.trim()
         email = IO.gets("Email: ") |> String.trim()
-        participante = Participante.crear(nombre, String.to_atom(rol), email)
-        nuevo = Hackathon.agregar_participante(hackathon, participante)
-        IO.puts("Participante creado.\n")
-        menu_participantes(nuevo)
+        id = IO.gets("Email: ") |> String.trim()
+        #Participante.crear(id, nombre, String.to_atom(rol), email)
+        #nuevo = Hackathon.agregar_participante(hackathon, participante)
+        IO.puts(GestionParticipantes.crear(id, nombre, String.to_atom(rol), email))
+        menu_participantes(hackathon)
 
       "2" ->
         listar_participantes(hackathon)
